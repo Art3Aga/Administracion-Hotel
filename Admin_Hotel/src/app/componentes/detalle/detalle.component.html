@@ -1,0 +1,43 @@
+<mat-toolbar>
+    <div class="row">
+      <div class="col-lg-4">
+        <button class="btnback" mat-icon-button [routerLink]="['/allcuartos']" routerLinkActive="router-link-active" >
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+      <div class="col-lg-4">
+        <!--<span>{{valor['object']['titulo']}}</span>-->
+        <p class="titulo">Detalles de Reservacion de {{valor['cuarto']}}: {{valor['nombre']}}</p>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </mat-toolbar>
+  <div class="container">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <mat-nav-list>
+            <mat-list-item *ngFor="let item of ['Cuarto: ', 'Direccion: ', 
+            'DUI: ', 'Fecha Partida: ', 'Fecha Llegada: ', 'Fecha de Reservacion: ', 'Hora de Salida: ', 'Hora de Llegada: ', 'Nombre del Cliente: ', 'Telefono: ']" >
+              <a matLine>{{ item }}</a>
+              <mat-divider></mat-divider>
+            </mat-list-item>
+          </mat-nav-list>
+      </div>
+      <div class="form-group col-md-6">
+        <mat-nav-list>
+          <mat-list-item *ngFor="let item of reservacion | async" >
+            <a matLine>{{ item }}</a>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-nav-list>    
+      </div>
+      <!--<div class="form-group col-md-4">
+        <label for="inputEmail4">Nombre Cuarto</label>
+        <input disabled type="text" class="form-control" id="inputEmail4" [(ngModel)]="reservacion[0]" [ngModelOptions]="{standalone: true}">
+      </div>-->
+      <!--<div class="form-group col-md-4">
+          
+      </div>-->
+    </div>
+      
+  </div>

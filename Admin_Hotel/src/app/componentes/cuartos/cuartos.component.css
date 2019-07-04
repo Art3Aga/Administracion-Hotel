@@ -1,0 +1,30 @@
+mat-grid-tile:nth-child(1) {
+    background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/02/20/3d/55/habitacion-doble.jpg'); 
+    color: white;
+    font-size: 22px;
+}
+mat-grid-tile:nth-child(2) {
+    background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/08/5d/dc/0e/deluxe-auto-hotel.jpg"); 
+    color: white;
+    font-size: 22px;
+}
+mat-grid-tile:nth-child(3) {
+    background-image: url("https://foto.hrsstatic.com/fotos/0/3/694/390/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F0%2F1%2F0%2F9%2F%2Fteaser_010909.jpg/6w0Dgkm2Dbg0I6MkGpI6jw%3D%3D/3543,2365/6/Catalonia_Atenas-Barcelona-Familienzimmer-1-10909.jpg"); 
+    color: white;
+    font-size: 22px;
+}
+mat-grid-tile:nth-child(4) {
+    background-image: url("https://r-ec.bstatic.com/images/hotel/max1024x768/654/65445918.jpg"); 
+    color: white;
+    font-size: 22px;
+}
+.container{
+    /*margin: 50px;*/
+    position: relative;
+    top: 5%;
+}
+/*.container1{
+    background-color: #f0db4f;
+    color: #363636;
+    height: 90.5%;
+}*/

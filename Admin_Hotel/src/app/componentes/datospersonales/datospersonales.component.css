@@ -1,0 +1,22 @@
+/*.btnback{
+    color: #363636;
+    transform: scale(0.9);
+}
+.btnback:hover{
+    background-color: #363636;
+    color: #f0db4f;
+}
+mat-toolbar{
+    height: 40px;
+    background-color: #f0db4f;
+    color: #363636;
+}
+.container1{
+    background-color: #f0db4f;
+    color: #363636;
+    height: 90.5%;
+}
+input{
+    background-color: #f0db4f;
+    color: #363636;
+}*/

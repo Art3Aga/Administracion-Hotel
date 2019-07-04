@@ -1,0 +1,82 @@
+<mat-toolbar>
+  <div class="row">
+    <div class="col-lg-4">
+      <button class="btnback" mat-icon-button [routerLink]="['/allcuartos']" routerLinkActive="router-link-active" >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="col-lg-4">
+      <!--<span>{{valor['object']['titulo']}}</span>-->
+      <p>{{valor['object']['titulo']}}</p>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</mat-toolbar>
+<div class="container">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Nombre Cuarto</label>
+        <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="valor['object']['titulo']" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Categoria</label>
+        <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="valor['object']['categoria']" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Descripcion</label>
+      <!--<input type="text" class="form-control" id="inputAddress">-->
+      <textarea class="form-control" id="validationTextarea" [(ngModel)]="valor['object']['descrip']" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputAddress2">Detalle 1</label>
+        <input [(ngModel)]="valor['object']['detalle1']" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputAddress2">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputAddress2">Detalle 2</label>
+        <input [(ngModel)]="valor['object']['detalle2']" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputAddress2">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputAddress2">Detalle 3</label>
+        <input [(ngModel)]="valor['object']['detalle3']" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputAddress2">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputCity">Nº de Favoritos</label>
+        <input value="{{valor['object']['favoritos']}}" type="text" class="form-control" disabled>
+        <!--<mat-slider class="form-control"
+          thumbLabel
+          [color]=colorSlide
+          tickInterval="1"
+          min="1"
+          max="{{valor['object']['favoritos']}}">
+        </mat-slider>-->
+      </div>
+      <div class="form-group col-md-4">
+        <div class="form-group">
+          <label>Reservado por:</label>
+          <br>
+          <button *ngIf="state == 'Ocupado'" (click)="nextPage(valor['object']['nombre'], valor['object']['password'],valor['object']['titulo'])" 
+                class="btn btn-primary">{{valor['object']['nombre']}}</button>
+          <!--<input *ngIf="state == 'Ocupado'" value="{{valor['object']['nombre']}}" type="text" class="form-control" disabled>-->
+          <input *ngIf="state == 'Disponible'"  value="Disponible" type="text" class="form-control" disabled>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <!--<label for="inputZip">Disponible</label>-->
+        <!--<mat-slide-toggle [checked]=estado [color]=colorSlide class="form-control"></mat-slide-toggle>-->
+        <mat-form-field>
+            <mat-label>Estado</mat-label>
+            <mat-select [(value)]="state">
+              <mat-option value="Disponible">Disponible</mat-option>
+              <mat-option value="Ocupado">Ocupado</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-danger" (click)="saveCambios()">Guardar Cambios</button>
+  </form>
+</div>

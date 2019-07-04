@@ -1,0 +1,50 @@
+
+<mat-sidenav-container fullscreen>
+    <mat-sidenav  #sidenav mode="side" class="app-sidenav">
+      <mat-toolbar color="warn" class="toolbar">
+        <!--future svg to go here-->
+        <span class="toolbar-filler">Menu</span>
+        <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="!sidenav.opened">
+          <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-nav-list>
+        <!--(click)="sidenav.toggle()"  evento al dar click-->
+        <a mat-list-item (click)="getTitulo('Categorias')" class="sidenav-link" [routerLink]="['/cuartos']" >
+          <mat-icon mat-list-icon>dashboard</mat-icon>
+          <span class="title" mat-line>Categorias</span>
+          <!--<span mat-line class="secondary">test</span>-->
+        </a>
+        <!--(click)="sidenav.toggle()"  evento al dar click-->
+        <a mat-list-item (click)="getTitulo('Todos los Cuartos')" class="sidenav-link" [routerLink]="['/allcuartos']">
+          <mat-icon mat-list-icon>store</mat-icon>
+          <span class="title" mat-line>Todos los Cuartos</span>
+          <!--<span mat-line class="secondary">test</span>-->
+        </a>
+        <!--(click)="sidenav.toggle()"  evento al dar click-->
+        <a mat-list-item (click)="getTitulo('Clientes')" class="sidenav-link" [routerLink]="['/clientes']" >
+          <mat-icon mat-list-icon>people</mat-icon>
+          <span class="title" mat-line>Clientes</span>
+          <!--<span mat-line class="secondary">test</span>-->
+        </a>
+        <!--(click)="sidenav.toggle()"  evento al dar click-->
+        <a mat-list-item (click)="getTitulo('Estadisticas')" class="sidenav-link" [routerLink]="['/clientes']" >
+          <mat-icon mat-list-icon><i class="material-icons">assessment</i></mat-icon>
+          <span class="title" mat-line>Estadisticas</span>
+          <!--<span mat-line class="secondary">fullscreen1</span>-->
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar id="appToolbar" [ngClass]="{'toolbar-fullscreen': (fullscreen$ | async)}" color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
+        <mat-icon aria-label="Menu" class="material-icons" id="menuicon">menu</mat-icon>
+      </button>
+      <h1 class="component-title">
+        <a class="title-link">{{title}}</a>
+      </h1>
+      <span class="toolbar-filler"></span>
+      <!--<button id="button-login" md-button [routerLink]="['/signupin']" *ngIf="!(user | async)">Log In</button>-->
+      <button id="button-logout" mat-flat-button>Salir</button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>

@@ -1,0 +1,66 @@
+.btnver{
+    background-color: rgba(0, 0, 0, 0.281);
+    color: black;
+}
+.itemsCard:hover{
+    cursor: pointer;
+    background-color: rgba(194, 190, 190, 0.103);
+}
+.example-card {
+    max-width: 400px;
+  }
+  
+.example-header-image {
+    /*background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');*/
+    background-image: url('../../../assets/avatars/av-2.png');
+    background-size: cover;
+}
+.preview{
+    width: 425px;
+    height: 525px;
+    background: #11b0eb;
+    border-radius: 5px;
+    /*position: fixed;
+    text-align: center;
+    word-wrap: break-word;
+    overflow: auto;*/
+}
+.row{
+    margin-left: 10px;
+}
+mat-nav-list{
+    width: 85%;
+    position: relative;
+    left: 8%;
+    background-color: white;
+}
+.example-form-field, mat-form-field {
+    width: 400px;
+    margin-left: 30%;
+}
+/*.container1{
+    background-color: #f0db4f;
+    color: #363636;
+    height: 90.5%;
+}
+.itemsDatos, .mat-expansion-panel-header.mat-expanded{
+    
+    background-color: #f0db4f;
+    color: #363636;
+}
+.disable_ripple, mat-list, .row, .expansion{
+    background: #f0db4f !important;
+}
+.itemsDatos > mat-list-item{
+    
+    background-color: #f0db4f;
+    color: #363636;
+}
+.mat-tab-label-container, .mat-tab-list{
+    background-color: #363636 !important;
+    color: #f0db4f;
+}
+mat-tab-header, .mat-tab-header, .seeRoom{
+    background-color: #363636 !important;
+    color: #f0db4f;
+}*/

@@ -1,0 +1,47 @@
+.sidenav-container {
+  height: 100%;
+}
+mat-sidenav{
+  width: 280px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #F44336;
+}
+
+.toolbar-fullscreen {
+  display: none;
+}
+
+.toolbar-filler {
+  flex: 1 1 auto;
+}
+/*mat-sidenav{
+  width: 300px;
+  background-color: #f0db4f;
+  color: #363636;
+}
+.toolbar{
+  background-color: #363636;
+  color: #f0db4f;
+}
+#appToolbar{
+  background-color: #363636;
+}
+.title-link, .component-title{
+  color: #f0db4f;
+}
+#button-logout{
+  background-color: #f0db4f;
+  color: #363636;
+}
+#menuicon{
+  color: #f0db4f;
+}*/

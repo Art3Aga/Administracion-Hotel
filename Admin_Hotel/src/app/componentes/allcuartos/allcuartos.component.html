@@ -1,0 +1,57 @@
+
+<mat-tab-group [backgroundColor]="background">
+  <mat-tab label="Todos los Cuartos">
+    <mat-nav-list class="itemsDatos">
+      <mat-list-item (click)="nextPage(item)" *ngFor="let item of disponibles | async">
+        <a matLine>{{ item.titulo }}</a>
+        <mat-chip-list>
+          <mat-chip color="primary" selected>{{item.categoria}}</mat-chip>   
+        </mat-chip-list>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item (click)="nextPage(item)" *ngFor="let item of ocupados | async">
+        <a matLine>{{ item.titulo }}</a>
+        <mat-chip-list>
+          <mat-chip color="primary" selected>{{item.categoria}}</mat-chip>   
+        </mat-chip-list>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <!--<mat-list-item (click)="nextPage(item)" *ngFor="let item of familiares | async">
+        <a matLine>{{ item.titulo }}</a>
+        <mat-chip-list>
+          <mat-chip color="primary" selected>{{item.categoria}}</mat-chip>   
+        </mat-chip-list>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item (click)="nextPage(item)" *ngFor="let item of suites | async">
+        <a matLine>{{ item.titulo }}</a>
+        <mat-chip-list>
+          <mat-chip color="primary" selected>{{item.categoria}}</mat-chip>   
+        </mat-chip-list>
+        <mat-divider></mat-divider>
+      </mat-list-item>-->
+    </mat-nav-list>
+  </mat-tab>
+  <mat-tab label="Disponibles">
+    <mat-nav-list class="itemsDatos">
+      <mat-list-item (click)="nextPage(item)" *ngFor="let item of disponibles | async">
+        <a matLine>{{ item.titulo }}</a>
+        <mat-chip-list>
+          <mat-chip color="primary" selected>{{item.categoria}}</mat-chip>   
+        </mat-chip-list>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-tab>
+  <mat-tab label="Ocupados">
+    <mat-nav-list class="itemsDatos">
+      <mat-list-item (click)="nextPage(item)" *ngFor="let item of ocupados | async">
+        <a matLine>{{ item.titulo }}</a>
+        <mat-chip-list>
+          <mat-chip color="primary" selected>{{item.categoria}}</mat-chip>   
+        </mat-chip-list>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-tab>
+</mat-tab-group>

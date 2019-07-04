@@ -1,0 +1,136 @@
+<!--<mat-tab-group>
+    <mat-tab label="Datos Personales">
+      <ng-template matTabContent>
+        <mat-list *ngFor="let item of clientes | async">
+          <mat-list-item >{{item.DatosPersonales.nombre}}</mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>            
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Cuartos">
+      <ng-template matTabContent>
+          <mat-accordion *ngFor="let item of clientes | async">
+            <mat-expansion-panel  (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+              <mat-expansion-panel-header (click)="getCliente(item.DatosPersonales.nombre, item.DatosPersonales.password)">
+                <mat-panel-title>
+                  {{item.DatosPersonales.nombre}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{panelOpenState ? 'Ocultar' : 'Ver Detalle'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list  *ngFor="let room of clientesCuartos | async">
+                <mat-list-item >{{room.titulo}}</mat-list-item>
+                <mat-divider></mat-divider>
+              </mat-list>
+            </mat-expansion-panel>
+          </mat-accordion>            
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>-->
+  <div class="container1">
+    <mat-tab-group [backgroundColor]="background">
+      <mat-tab label="Datos Personales"> 
+        <mat-nav-list class="itemsDatos">
+          <mat-list-item (click)="nextPage(item.DatosPersonales.nombre, item.DatosPersonales.password)"   *ngFor="let item of clientes | async">
+            <a matLine>{{ item.DatosPersonales.nombre }}</a>
+            <button color="primary" mat-icon-button>
+              <mat-icon>visibility</mat-icon>
+            </button>     
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-tab>
+      <mat-tab label="Favoritos">
+        <mat-accordion class="itemsFav" color="primary">
+          <mat-expansion-panel class="expansion" (opened)="getCliente(item.DatosPersonales.nombre, item.DatosPersonales.password)"
+          (closed)="panelOpenState = false" *ngFor="let item of clientes | async">
+            <mat-expansion-panel-header class="disable_ripple">
+              <mat-panel-title>
+                {{item.DatosPersonales.nombre}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{panelOpenState ? 'Ocultar' : 'Ver Favoritos'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-list *ngFor="let room of clientesCuartos | async">
+              <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-6">
+                  <mat-list-item>{{room.titulo}}</mat-list-item>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-0"></div>
+                <div class="col-lg-2 col-md-2 col-sm-5">
+                  <button mat-raised-button class="seeRoom">Ver Cuarto</button>
+                </div>
+              </div>
+              <mat-divider></mat-divider>
+            </mat-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-tab>
+      <mat-tab label="Reservaciones">
+          <mat-form-field class="example-form-field">
+              <input matInput (keyup)="print(texto)" type="text" placeholder="Buscar Cliente" [(ngModel)]="texto">
+              <button mat-button *ngIf="texto" matSuffix mat-icon-button aria-label="Clear" (click)="texto=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>            
+          <mat-accordion class="itemsFav" color="primary">
+              <mat-expansion-panel class="expansion" (opened)="getCliente2(item.DatosPersonales.nombre, item.DatosPersonales.password)"
+              (closed)="panelOpenState = false" *ngFor="let item of clientes | async">
+                <mat-expansion-panel-header class="disable_ripple">
+                  <mat-panel-title>
+                    {{item.DatosPersonales.nombre}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{panelOpenState ? 'Ocultar' : 'Ver Favoritos'}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-list *ngFor="let room of clientesCuartos | async">
+                  <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-6">
+                      <mat-list-item>{{room.cuartoReservado}}</mat-list-item>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-0"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-5">
+                      <button mat-raised-button class="seeRoom">Ver Cuarto</button>
+                    </div>
+                  </div>
+                  <mat-divider></mat-divider>
+                </mat-list>
+              </mat-expansion-panel>
+            </mat-accordion>
+      </mat-tab>
+      <mat-tab label="Visitas">
+          <mat-accordion class="itemsFav" color="primary">
+              <mat-expansion-panel class="expansion" (opened)="getCliente3(item.nombre)"
+              (closed)="panelOpenState = false" *ngFor="let item of visitas | async">
+                <mat-expansion-panel-header class="disable_ripple">
+                  <mat-panel-title>
+                    {{item.nombre}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{panelOpenState ? 'Ocultar' : 'Ver Favoritos'}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-list *ngFor="let room of clientesVisitas | async">
+                  <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-6">
+                      <mat-list-item>{{room.reservado}}</mat-list-item>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-0"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-5">
+                      <button mat-raised-button class="seeRoom">Ver Reservacion</button>
+                    </div>
+                  </div>
+                  <mat-divider></mat-divider>
+                </mat-list>
+              </mat-expansion-panel>
+            </mat-accordion>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  
+  
+  

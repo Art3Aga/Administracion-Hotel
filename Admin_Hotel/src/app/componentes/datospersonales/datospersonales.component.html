@@ -1,0 +1,96 @@
+<div class="container1">
+    <!--<button class="btnback" mat-raised-button [routerLink]="['/clientes']" routerLinkActive="router-link-active" >
+    Atras
+</button>-->
+<mat-toolbar>
+        <button class="btnback" mat-icon-button [routerLink]="['/clientes']" routerLinkActive="router-link-active" >
+        <mat-icon>arrow_back</mat-icon>
+        </button>
+    </mat-toolbar>
+    
+    <div class="container">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Company (disabled)" disabled value="Google">
+            </mat-form-field>
+          
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width">
+                <input matInput placeholder="First name">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width">
+                <input matInput placeholder="Long Last Name That Will Be Truncated">
+              </mat-form-field></td>
+            </tr></table>
+          
+            <p>
+              <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Address 2"></textarea>
+              </mat-form-field>
+            </p>
+          
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width">
+                <input matInput placeholder="City">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width">
+                <input matInput placeholder="State">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width">
+                <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+              </mat-form-field></td>
+            </tr></table>
+          </form>
+          
+            <!--<form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress">Address</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress2">Address 2</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                            <mat-slide-toggle
+                            class="example-margin"
+                            [color]="'primary'"
+                            [checked]="true"
+                            [disabled]="false">
+                          Disponible
+                        </mat-slide-toggle>
+                    </div>
+                  </form>-->
+    </div>
+</div>
